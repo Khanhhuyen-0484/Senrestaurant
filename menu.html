@@ -80,16 +80,19 @@
           </div>
 
           <nav class="menu-category-nav" aria-label="Chọn nhóm món">
-            <a href="#starter-menu">Khai vị</a>
-            <a href="#drinking-menu">Món nhậu</a>
-            <a href="#seafood-menu">Hải sản</a>
-            <a href="#squid-shrimp-menu">Mực & tôm</a>
-            <a href="#meat-menu">Gà bò dê</a>
-            <a href="#hotpot-menu">Lẩu cơm xôi</a>
+            <button class="active" type="button" data-menu-target="starter-menu">Khai vị</button>
+            <button type="button" data-menu-target="drinking-menu">Món nhậu</button>
+            <button type="button" data-menu-target="seafood-menu">Hải sản</button>
+            <button type="button" data-menu-target="squid-shrimp-menu">Mực & tôm</button>
+            <button type="button" data-menu-target="eel-frog-menu">Lươn ếch nem</button>
+            <button type="button" data-menu-target="meat-menu">Gà bò dê</button>
+            <button type="button" data-menu-target="fish-menu">Bê & cá</button>
+            <button type="button" data-menu-target="hotpot-menu">Lẩu cơm xôi</button>
+            <button type="button" data-menu-target="vegetable-menu">Rau & canh</button>
           </nav>
 
           <div class="extracted-menu-grid menu-showcase-list">
-            <article class="menu-list-card" id="starter-menu">
+            <article class="menu-list-card active" id="starter-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/menu-rolls.jpg" alt="Khai vị và món cuốn tại Nhà Hàng Sen">
               </figure>
@@ -111,7 +114,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card" id="drinking-menu">
+            <article class="menu-list-card" id="drinking-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/menu-oyster.jpg" alt="Món nhậu hải sản tại Nhà Hàng Sen">
               </figure>
@@ -133,7 +136,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card" id="seafood-menu">
+            <article class="menu-list-card" id="seafood-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/menu-lobster.jpg" alt="Hải sản sống tại Nhà Hàng Sen">
               </figure>
@@ -152,7 +155,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card" id="squid-shrimp-menu">
+            <article class="menu-list-card" id="squid-shrimp-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/dish-shrimp.jpg" alt="Món tôm và mực tại Nhà Hàng Sen">
               </figure>
@@ -174,7 +177,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="eel-frog-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/real-food-7.jpg" alt="Món nóng gọi theo đĩa tại Nhà Hàng Sen">
               </figure>
@@ -196,7 +199,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card" id="meat-menu">
+            <article class="menu-list-card" id="meat-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/menu-pork.jpg" alt="Món thịt và món gia đình tại Nhà Hàng Sen">
               </figure>
@@ -218,7 +221,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="fish-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/menu-grilled-fish.jpg" alt="Món cá tại Nhà Hàng Sen">
               </figure>
@@ -239,7 +242,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card" id="hotpot-menu">
+            <article class="menu-list-card" id="hotpot-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/menu-hotpot.jpg" alt="Lẩu và cơm xôi tại Nhà Hàng Sen">
               </figure>
@@ -260,7 +263,7 @@
               </div>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="vegetable-menu" data-menu-panel>
               <figure class="menu-card-media">
                 <img src="assets/real-food-9.jpg" alt="Rau và món canh tại Nhà Hàng Sen">
               </figure>

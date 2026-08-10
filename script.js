@@ -31,6 +31,19 @@ filterButtons.forEach((button) => {
   });
 });
 
+const menuCategoryButtons = document.querySelectorAll("[data-menu-target]");
+const menuPanels = document.querySelectorAll("[data-menu-panel]");
+
+menuCategoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.dataset.menuTarget;
+    menuCategoryButtons.forEach((item) => item.classList.toggle("active", item === button));
+    menuPanels.forEach((panel) => {
+      panel.classList.toggle("active", panel.id === targetId);
+    });
+  });
+});
+
 document.querySelector("form.booking-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const form = event.currentTarget;
