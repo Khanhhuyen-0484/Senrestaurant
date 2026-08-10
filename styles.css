@@ -894,7 +894,6 @@ section {
 .dish-menu-card {
   position: relative;
   overflow: hidden;
-  min-height: 430px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -914,90 +913,39 @@ section {
 
 .dish-menu-card > img {
   width: 100%;
-  height: 210px;
+  height: 220px;
   object-position: center;
 }
 
-.dish-tags {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.dish-tags span {
-  min-height: 22px;
-  padding: 4px 9px;
-  color: #fff;
-  background: #4d936b;
-  border-radius: 3px;
-  font-size: 10px;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.dish-tags span:nth-child(2) {
-  background: var(--red-dark);
-}
-
 .dish-card-body {
-  display: flex;
-  min-height: 220px;
-  flex-direction: column;
-  padding: 20px;
+  padding: 18px 18px 20px;
 }
 
 .dish-card-title {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 14px;
-  align-items: start;
+  gap: 12px;
 }
 
 .dish-card-title h3 {
   margin: 0;
   color: #2b2421;
   font-family: var(--serif);
-  font-size: 24px;
+  font-size: 25px;
   line-height: 1.08;
 }
 
 .dish-card-title strong {
-  color: var(--red-dark);
-  font-size: 13px;
-  white-space: nowrap;
-}
-
-.dish-card-body p {
-  flex: 1;
-  margin: 12px 0 18px;
-  color: #746c66;
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.dish-card-body footer {
-  display: flex;
+  display: inline-flex;
+  width: max-content;
+  min-height: 28px;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-  color: #8a817b;
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.dish-card-body footer a {
-  display: inline-grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
+  padding: 0 10px;
   color: var(--red-dark);
-  border: 1px solid var(--red-dark);
-  border-radius: 50%;
-  font-weight: 900;
+  background: #fbf5f2;
+  border: 1px solid #eadfd9;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .menu-consult-card {
@@ -2004,7 +1952,6 @@ textarea {
   }
 
   .dish-card-body {
-    min-height: auto;
     padding: 18px;
   }
 
