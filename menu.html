@@ -34,8 +34,9 @@
             <p class="script">Thực đơn nhà hàng</p>
             <h1>Hải sản tươi sống, món gia đình và combo theo mâm</h1>
             <p>
-              Xem nhanh các nhóm món phổ biến hoặc mở ảnh menu thật bên dưới để đối chiếu đầy đủ. Món hải sản sống
-              và món tính kg sẽ được tư vấn theo thời điểm để khách chọn đúng loại, đúng ngân sách.
+              Thực đơn được trình bày theo từng nhóm món để khách dễ chọn nhanh khi đặt bàn, gọi món gia đình hoặc
+              lên mâm tiệc. Món hải sản sống và món tính kg sẽ được tư vấn theo thời điểm để khách chọn đúng loại,
+              đúng ngân sách.
             </p>
             <div class="menu-hero-actions">
               <a class="btn social-btn zalo-button" href="https://zalo.me/0972616855" target="_blank" rel="noreferrer"><span class="social-icon zalo-icon">Z</span> Tư vấn qua Zalo</a>
@@ -73,13 +74,23 @@
         <section class="extracted-menu-section" aria-labelledby="extracted-menu-title">
           <div class="section-heading compact">
             <p class="script">Món trong thực đơn</p>
-            <h2 id="extracted-menu-title">Các nhóm món nổi bật</h2>
+            <h2 id="extracted-menu-title">Menu Nhà Hàng Sen</h2>
             <span class="divider"></span>
-            <p>Giá món hải sản sống hoặc món tính kg có thể thay đổi theo thời điểm, khách nhắn Zalo/Facebook để được tư vấn nhanh.</p>
+            <p>Giá món hải sản sống hoặc món tính kg có thể thay đổi theo thời điểm. Khách nhắn Zalo/Facebook để được tư vấn nhanh trước khi đặt bàn.</p>
           </div>
 
+          <nav class="menu-category-nav" aria-label="Chọn nhóm món">
+            <a href="#starter-menu">Khai vị</a>
+            <a href="#drinking-menu">Món nhậu</a>
+            <a href="#seafood-menu">Hải sản</a>
+            <a href="#squid-shrimp-menu">Mực & tôm</a>
+            <a href="#meat-menu">Gà bò dê</a>
+            <a href="#hotpot-menu">Lẩu cơm xôi</a>
+          </nav>
+
           <div class="extracted-menu-grid">
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="starter-menu">
+              <span class="menu-card-index">01</span>
               <h3>Khai vị & món nộm</h3>
               <ul>
                 <li><span>Ngô chiên</span><strong>25K</strong></li>
@@ -95,7 +106,8 @@
               </ul>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="drinking-menu">
+              <span class="menu-card-index">02</span>
               <h3>Món nhậu</h3>
               <ul>
                 <li><span>Trường lợn hấp</span><strong>200K</strong></li>
@@ -111,7 +123,8 @@
               </ul>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="seafood-menu">
+              <span class="menu-card-index">03</span>
               <h3>Ốc, cua, ghẹ & hải sản sống</h3>
               <ul>
                 <li><span>Baba</span><strong>Tính kg</strong></li>
@@ -124,7 +137,8 @@
               </ul>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="squid-shrimp-menu">
+              <span class="menu-card-index">04</span>
               <h3>Mực & tôm</h3>
               <ul>
                 <li><span>Mực ống hấp</span><strong>140K</strong></li>
@@ -141,6 +155,7 @@
             </article>
 
             <article class="menu-list-card">
+              <span class="menu-card-index">05</span>
               <h3>Lươn, ếch, nem</h3>
               <ul>
                 <li><span>Lươn cuốn om hoa chuối</span><strong>150K</strong></li>
@@ -156,7 +171,8 @@
               </ul>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="meat-menu">
+              <span class="menu-card-index">06</span>
               <h3>Gà, bò, trâu, dê</h3>
               <ul>
                 <li><span>Gà hấp muối</span><strong>180K</strong></li>
@@ -173,6 +189,7 @@
             </article>
 
             <article class="menu-list-card">
+              <span class="menu-card-index">07</span>
               <h3>Bê & món cá</h3>
               <ul>
                 <li><span>Bê tái chanh</span><strong>140K</strong></li>
@@ -187,7 +204,8 @@
               </ul>
             </article>
 
-            <article class="menu-list-card">
+            <article class="menu-list-card" id="hotpot-menu">
+              <span class="menu-card-index">08</span>
               <h3>Lẩu, cơm, xôi</h3>
               <ul>
                 <li><span>Lẩu thập cẩm</span><strong>500K</strong></li>
@@ -203,6 +221,7 @@
             </article>
 
             <article class="menu-list-card">
+              <span class="menu-card-index">09</span>
               <h3>Rau & món canh</h3>
               <ul>
                 <li><span>Rau muống xào tỏi</span><strong>20K</strong></li>
@@ -216,54 +235,6 @@
                 <li><span>Canh cà chua trứng</span><strong>20K</strong></li>
               </ul>
             </article>
-          </div>
-        </section>
-
-        <section class="menu-scan-section" aria-labelledby="menu-scan-title">
-          <div class="section-heading compact">
-            <p class="script">Ảnh thực đơn</p>
-            <h2 id="menu-scan-title">Xem đầy đủ các trang menu</h2>
-            <span class="divider"></span>
-            <p>Bấm vào từng trang để xem ảnh lớn hơn.</p>
-          </div>
-
-          <div class="menu-scan-grid">
-            <a class="menu-scan-card" href="assets/menu-page-1.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-1.jpg" alt="Thực đơn khai vị và món nộm Nhà Hàng Sen" />
-              <span>Khai vị & món nộm</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-2.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-2.jpg" alt="Thực đơn món nhậu Nhà Hàng Sen" />
-              <span>Món nhậu</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-3.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-3.jpg" alt="Thực đơn baba, tôm hùm, ốc, cua ghẹ Nhà Hàng Sen" />
-              <span>Baba, tôm hùm, ốc, cua ghẹ</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-4.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-4.jpg" alt="Thực đơn mực và tôm Nhà Hàng Sen" />
-              <span>Mực & tôm</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-5.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-5.jpg" alt="Thực đơn lươn, ếch, nem Nhà Hàng Sen" />
-              <span>Lươn, ếch, nem</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-6.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-6.jpg" alt="Thực đơn gà, bò, trâu, dê Nhà Hàng Sen" />
-              <span>Gà, bò, trâu, dê</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-7.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-7.jpg" alt="Thực đơn bê và món cá Nhà Hàng Sen" />
-              <span>Bê & món cá</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-8.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-8.jpg" alt="Thực đơn lẩu, cơm, xôi Nhà Hàng Sen" />
-              <span>Lẩu, cơm, xôi</span>
-            </a>
-            <a class="menu-scan-card" href="assets/menu-page-9.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/menu-page-9.jpg" alt="Thực đơn rau và món canh Nhà Hàng Sen" />
-              <span>Rau & món canh</span>
-            </a>
           </div>
         </section>
       </section>
