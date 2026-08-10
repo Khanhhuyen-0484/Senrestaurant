@@ -944,8 +944,9 @@ section {
   color: var(--red-dark);
   background: transparent;
   border: 0;
-  font-size: 20px;
-  font-weight: 900;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 800;
   line-height: 1;
   white-space: nowrap;
 }
