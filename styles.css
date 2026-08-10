@@ -65,24 +65,15 @@ a {
 }
 
 .brand-mark {
-  width: 28px;
-  height: 28px;
-  border: 7px solid var(--gold);
-  border-bottom-width: 3px;
-  border-radius: 50% 50% 44% 44%;
-  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  background: url("assets/logo-lotus.svg") center / contain no-repeat;
 }
 
 .brand-mark::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -11px;
-  width: 7px;
-  height: 15px;
-  border-radius: 5px;
-  background: var(--gold);
-  transform: translateX(-50%);
+  content: none;
 }
 
 .brand strong {
