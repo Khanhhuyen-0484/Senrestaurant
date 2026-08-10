@@ -933,8 +933,8 @@ section {
 .dish-card-title h3 {
   margin: 0;
   color: #2b2421;
-  font-family: var(--sans);
-  font-size: 21px;
+  font-family: var(--serif);
+  font-size: 23px;
   font-weight: 800;
   line-height: 1.08;
 }
