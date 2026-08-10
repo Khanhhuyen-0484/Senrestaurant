@@ -853,7 +853,7 @@ section {
 }
 
 .menu-browser {
-  width: min(1380px, calc(100% - 48px));
+  width: min(1180px, calc(100% - 64px));
   margin: 0 auto;
 }
 
@@ -888,7 +888,8 @@ section {
 .dish-card-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
+  gap: 24px;
+  margin: 0 auto;
 }
 
 .dish-menu-card {
@@ -913,7 +914,7 @@ section {
 
 .dish-menu-card > img {
   width: 100%;
-  height: 160px;
+  height: 148px;
   object-position: center;
 }
 
@@ -949,6 +950,12 @@ section {
   font-weight: 800;
   line-height: 1;
   white-space: nowrap;
+}
+
+@media (min-width: 1500px) {
+  .menu-browser {
+    width: 1120px;
+  }
 }
 
 .menu-consult-card {
@@ -1636,7 +1643,7 @@ textarea {
   }
 
   .menu-browser {
-    width: min(760px, calc(100% - 48px));
+    width: min(920px, calc(100% - 48px));
   }
 
   .menu-category-nav {
@@ -1649,7 +1656,7 @@ textarea {
   }
 
   .dish-card-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .menu-card-media img {
