@@ -1,0 +1,40 @@
+const navToggle = document.querySelector(".nav-toggle");
+const mainNav = document.querySelector(".main-nav");
+const navLinks = [...document.querySelectorAll(".main-nav a")];
+const currentPage = document.body.dataset.page;
+
+document.querySelector(`[data-page-link="${currentPage}"]`)?.classList.add("active");
+
+navToggle?.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    navToggle?.setAttribute("aria-expanded", "false");
+  });
+});
+
+const filterButtons = document.querySelectorAll(".filters button");
+const menuCards = document.querySelectorAll(".menu-card");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach((item) => item.classList.toggle("active", item === button));
+    menuCards.forEach((card) => {
+      const categories = card.dataset.category.split(" ");
+      card.classList.toggle("hidden", filter !== "all" && !categories.includes(filter));
+    });
+  });
+});
+
+document.querySelector("form.booking-form")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const name = new FormData(form).get("name") || "quý khách";
+  form.querySelector(".form-status").textContent = `Cảm ơn ${name}, Sen đã nhận yêu cầu tư vấn.`;
+  form.reset();
+});
