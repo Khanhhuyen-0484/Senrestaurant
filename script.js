@@ -44,6 +44,19 @@ menuCategoryButtons.forEach((button) => {
   });
 });
 
+const dishFilterButtons = document.querySelectorAll("[data-dish-filter]");
+const dishMenuCards = document.querySelectorAll("[data-dish-category]");
+
+dishFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.dishFilter;
+    dishFilterButtons.forEach((item) => item.classList.toggle("active", item === button));
+    dishMenuCards.forEach((card) => {
+      card.classList.toggle("hidden", filter !== "all" && card.dataset.dishCategory !== filter);
+    });
+  });
+});
+
 document.querySelector("form.booking-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const form = event.currentTarget;
