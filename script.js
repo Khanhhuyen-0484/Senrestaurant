@@ -47,9 +47,18 @@ menuCategoryButtons.forEach((button) => {
 const dishFilterButtons = document.querySelectorAll("[data-dish-filter]");
 const dishMenuCards = document.querySelectorAll("[data-dish-category]");
 
+const loadDishCardImage = (card) => {
+  const image = card.querySelector("img[data-src]");
+  if (!image) return;
+  image.src = image.dataset.src;
+  image.removeAttribute("data-src");
+};
+
 const applyDishFilter = (filter) => {
   dishMenuCards.forEach((card) => {
-    card.classList.toggle("hidden", card.dataset.dishCategory !== filter);
+    const isVisible = card.dataset.dishCategory === filter;
+    if (isVisible) loadDishCardImage(card);
+    card.classList.toggle("hidden", !isVisible);
   });
 };
 

@@ -177,7 +177,7 @@ a {
   background:
     linear-gradient(180deg, rgba(250, 245, 242, .05) 0%, rgba(250, 245, 242, .34) 42%, var(--bg) 96%),
     linear-gradient(90deg, rgba(55, 28, 12, .42), rgba(255, 255, 255, .12) 58%),
-    url("assets/hero-sen-front.png") center top / cover;
+    url("assets/hero-sen-front.jpg") center top / cover;
 }
 
 .hero-content {
@@ -1740,7 +1740,7 @@ textarea {
     background:
       linear-gradient(180deg, rgba(250, 245, 242, .05) 0%, rgba(250, 245, 242, .5) 48%, var(--bg) 100%),
       linear-gradient(90deg, rgba(55, 28, 12, .6), rgba(255, 255, 255, .1)),
-      url("assets/hero-sen-front.png") center top / cover;
+      url("assets/hero-sen-front.jpg") center top / cover;
   }
 
   .hero-content {
