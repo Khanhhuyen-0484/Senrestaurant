@@ -914,7 +914,8 @@ section {
   scroll-margin-top: 108px;
 }
 
-.menu-browser {
+.menu-browser,
+.dish-menu {
   width: min(960px, calc(100% - 96px));
   margin: 0 auto;
 }
@@ -949,7 +950,7 @@ section {
 
 .dish-card-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   margin: 0 auto;
 }
@@ -1015,7 +1016,8 @@ section {
 }
 
 @media (min-width: 1500px) {
-  .menu-browser {
+  .menu-browser,
+  .dish-menu {
     width: 960px;
   }
 }
@@ -1704,7 +1706,8 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .menu-browser {
+  .menu-browser,
+  .dish-menu {
     width: min(820px, calc(100% - 48px));
   }
 
@@ -1997,6 +2000,7 @@ textarea {
   }
 
   .menu-browser,
+  .dish-menu,
   .extracted-menu-grid {
     width: min(100% - 32px, 560px);
   }
