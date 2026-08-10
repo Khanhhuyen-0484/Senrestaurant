@@ -47,15 +47,24 @@ menuCategoryButtons.forEach((button) => {
 const dishFilterButtons = document.querySelectorAll("[data-dish-filter]");
 const dishMenuCards = document.querySelectorAll("[data-dish-category]");
 
+const applyDishFilter = (filter) => {
+  dishMenuCards.forEach((card) => {
+    card.classList.toggle("hidden", card.dataset.dishCategory !== filter);
+  });
+};
+
 dishFilterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const filter = button.dataset.dishFilter;
     dishFilterButtons.forEach((item) => item.classList.toggle("active", item === button));
-    dishMenuCards.forEach((card) => {
-      card.classList.toggle("hidden", filter !== "all" && card.dataset.dishCategory !== filter);
-    });
+    applyDishFilter(filter);
   });
 });
+
+const activeDishFilter = document.querySelector("[data-dish-filter].active")?.dataset.dishFilter;
+if (activeDishFilter) {
+  applyDishFilter(activeDishFilter);
+}
 
 document.querySelector("form.booking-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
