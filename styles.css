@@ -887,8 +887,8 @@ section {
 
 .dish-card-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
 }
 
 .dish-menu-card {
@@ -924,10 +924,10 @@ section {
 
 .dish-card-title {
   display: flex;
-  min-height: 74px;
+  min-height: 78px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
 }
 
 .dish-card-title h3 {
@@ -939,17 +939,13 @@ section {
 }
 
 .dish-card-title strong {
-  display: inline-flex;
-  width: max-content;
-  min-height: 28px;
-  align-items: center;
-  padding: 0 10px;
+  display: block;
   color: var(--red-dark);
-  background: #fbf5f2;
-  border: 1px solid #eadfd9;
-  border-radius: 4px;
-  font-size: 14px;
+  background: transparent;
+  border: 0;
+  font-size: 20px;
   font-weight: 900;
+  line-height: 1;
   white-space: nowrap;
 }
 
