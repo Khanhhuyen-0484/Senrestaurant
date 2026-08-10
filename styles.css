@@ -923,8 +923,6 @@ section {
 .menu-list-card {
   position: relative;
   display: none;
-  grid-template-columns: minmax(280px, .36fr) minmax(0, .64fr);
-  gap: 28px;
   overflow: hidden;
   padding: 26px;
   background: #fff;
@@ -935,7 +933,7 @@ section {
 }
 
 .menu-list-card.active {
-  display: grid;
+  display: block;
 }
 
 .menu-list-card::before {
@@ -955,13 +953,13 @@ section {
 
 .menu-card-media img {
   width: 100%;
-  height: 100%;
-  min-height: 390px;
+  height: 230px;
+  min-height: 0;
   object-position: center;
 }
 
 .menu-card-content {
-  padding: 4px 0;
+  padding: 24px 0 0;
 }
 
 .menu-card-index {
@@ -990,27 +988,34 @@ section {
 
 .menu-list-card ul {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 32px;
-  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .menu-list-card li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 14px;
-  align-items: baseline;
-  min-height: 34px;
-  padding: 11px 0;
-  border-bottom: 1px dashed #e4d5cd;
+  display: flex;
+  min-height: 112px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  background: #fffdfb;
+  border: 1px solid #eadfd9;
+  border-radius: 6px;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.menu-list-card li:hover {
+  border-color: rgba(170, 66, 78, .34);
+  box-shadow: 0 12px 22px rgba(60, 39, 31, .075);
+  transform: translateY(-2px);
 }
 
 .menu-list-card li:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
+  border-bottom: 1px solid #eadfd9;
 }
 
 .menu-list-card span {
@@ -1019,13 +1024,16 @@ section {
 }
 
 .menu-list-card strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
   min-width: 72px;
   color: var(--red-dark);
-  background: #fbf5f2;
-  padding: 3px 8px;
+  background: #f8eee9;
+  padding: 5px 10px;
   border-radius: 4px;
   font-size: 15px;
-  text-align: center;
   white-space: nowrap;
 }
 
@@ -1727,8 +1735,11 @@ textarea {
   }
 
   .menu-card-media img {
-    min-height: 320px;
-    aspect-ratio: 1.9;
+    height: 220px;
+  }
+
+  .menu-list-card ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .food-showcase {
@@ -2032,7 +2043,7 @@ textarea {
   }
 
   .menu-card-media img {
-    min-height: 230px;
+    height: 190px;
     aspect-ratio: 1.55;
   }
 
@@ -2049,8 +2060,8 @@ textarea {
   }
 
   .menu-list-card li {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2px;
+    min-height: 94px;
+    gap: 12px;
   }
 
   .menu-list-card strong {
