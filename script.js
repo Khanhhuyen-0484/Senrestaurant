@@ -132,7 +132,7 @@ const setActiveDishFilter = (filter, button, shouldAnimate = false) => {
     const title = button.textContent.trim();
     if (dishBookTitle) dishBookTitle.textContent = title;
     renderDishBookSpread(filter, title);
-    if (shouldAnimate) button.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    if (shouldAnimate && isMobileMenu()) button.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
   };
 
   if (!shouldAnimate || !isMobileMenu() || !dishBookSpread) {
