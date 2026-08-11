@@ -954,6 +954,7 @@ section {
 
 .menu-browser,
 .dish-menu {
+  position: relative;
   width: min(960px, calc(100% - 96px));
   margin: 0 auto;
 }
@@ -994,18 +995,10 @@ section {
 }
 
 .dish-book-header {
-  display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) 48px;
-  gap: 14px;
-  align-items: center;
+  display: block;
   margin: 0 0 16px;
-  padding: 12px 14px 14px;
+  padding: 0 76px;
   color: #5f3f38;
-  background: #fffdfb;
-  border: 1px solid #e4d7cf;
-  border-bottom: 0;
-  border-radius: 10px 10px 0 0;
-  box-shadow: 0 10px 22px rgba(60, 39, 31, .07);
 }
 
 .dish-book-header div {
@@ -1036,6 +1029,9 @@ section {
 }
 
 .dish-book-header button {
+  position: absolute;
+  top: calc(50% + 42px);
+  z-index: 5;
   display: grid;
   place-items: center;
   width: 48px;
@@ -1048,6 +1044,26 @@ section {
   font-weight: 800;
   line-height: 1;
   cursor: pointer;
+  transform: translateY(-50%);
+  box-shadow: 0 12px 24px rgba(148, 28, 31, .2);
+}
+
+.dish-book-header button[data-dish-page="prev"] {
+  left: 18px;
+}
+
+.dish-book-header button[data-dish-page="next"] {
+  right: 18px;
+}
+
+@media (min-width: 1180px) {
+  .dish-book-header button[data-dish-page="prev"] {
+    left: -72px;
+  }
+
+  .dish-book-header button[data-dish-page="next"] {
+    right: -72px;
+  }
 }
 
 .dish-swipe-hint {
@@ -2609,7 +2625,7 @@ textarea {
   }
 
   .dish-book-header {
-    display: grid;
+    display: none;
     grid-template-columns: 42px minmax(0, 1fr) 42px;
     gap: 10px;
     align-items: center;
