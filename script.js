@@ -53,6 +53,7 @@ const dishSpreadTitle = document.querySelector("[data-dish-spread-title]");
 const dishBookList = document.querySelector("[data-dish-book-list]");
 const dishBookPhotos = document.querySelector("[data-dish-book-photos]");
 const isMobileMenu = () => window.matchMedia("(max-width: 640px)").matches;
+const dishButtonList = [...dishFilterButtons];
 
 const loadDishCardImage = (card) => {
   const image = card.querySelector("img[data-src]");
@@ -69,10 +70,32 @@ const applyDishFilter = (filter) => {
   });
 };
 
+const getDishSortNumber = (card) => {
+  const image = card.querySelector("img");
+  const source = image?.dataset.src || image?.getAttribute("src") || "";
+  const match = source.match(/-(\d+)-[^/]+$/);
+  return match ? Number(match[1]) : 0;
+};
+
+const organizeDishCards = () => {
+  const grid = document.querySelector(".dish-card-grid");
+  if (!grid || !dishButtonList.length) return;
+
+  const categoryOrder = new Map(dishButtonList.map((button, index) => [button.dataset.dishFilter, index]));
+  [...dishMenuCards]
+    .sort((a, b) => {
+      const categoryDiff = (categoryOrder.get(a.dataset.dishCategory) ?? 99) - (categoryOrder.get(b.dataset.dishCategory) ?? 99);
+      return categoryDiff || getDishSortNumber(a) - getDishSortNumber(b);
+    })
+    .forEach((card) => grid.append(card));
+};
+
 const renderDishBookSpread = (filter, title) => {
   if (!dishBookList || !dishBookPhotos || !dishSpreadTitle) return;
 
-  const cards = [...dishMenuCards].filter((card) => card.dataset.dishCategory === filter);
+  const cards = [...document.querySelectorAll("[data-dish-category]")]
+    .filter((card) => card.dataset.dishCategory === filter)
+    .sort((a, b) => getDishSortNumber(a) - getDishSortNumber(b));
   dishSpreadTitle.textContent = title;
   dishBookList.replaceChildren();
   dishBookPhotos.replaceChildren();
@@ -128,17 +151,45 @@ dishFilterButtons.forEach((button) => {
   });
 });
 
+const turnDishPage = (direction) => {
+  const activeIndex = Math.max(0, dishButtonList.findIndex((item) => item.classList.contains("active")));
+  const nextButton = dishButtonList[(activeIndex + direction + dishButtonList.length) % dishButtonList.length];
+  setActiveDishFilter(nextButton.dataset.dishFilter, nextButton, true);
+};
+
 dishPageButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const buttons = [...dishFilterButtons];
-    const activeIndex = Math.max(0, buttons.findIndex((item) => item.classList.contains("active")));
-    const direction = button.dataset.dishPage === "next" ? 1 : -1;
-    const nextButton = buttons[(activeIndex + direction + buttons.length) % buttons.length];
-    setActiveDishFilter(nextButton.dataset.dishFilter, nextButton, true);
+    turnDishPage(button.dataset.dishPage === "next" ? 1 : -1);
   });
 });
 
+if (dishBookSpread) {
+  let swipeStartX = null;
+  let swipeStartY = null;
+
+  dishBookSpread.addEventListener("pointerdown", (event) => {
+    swipeStartX = event.clientX;
+    swipeStartY = event.clientY;
+  });
+
+  dishBookSpread.addEventListener("pointerup", (event) => {
+    if (swipeStartX === null || swipeStartY === null) return;
+    const deltaX = event.clientX - swipeStartX;
+    const deltaY = event.clientY - swipeStartY;
+    swipeStartX = null;
+    swipeStartY = null;
+    if (Math.abs(deltaX) < 46 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+    turnDishPage(deltaX < 0 ? 1 : -1);
+  });
+
+  dishBookSpread.addEventListener("pointercancel", () => {
+    swipeStartX = null;
+    swipeStartY = null;
+  });
+}
+
 const activeDishButton = document.querySelector("[data-dish-filter].active");
+organizeDishCards();
 if (activeDishButton) {
   setActiveDishFilter(activeDishButton.dataset.dishFilter, activeDishButton);
 }
