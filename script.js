@@ -44,8 +44,10 @@ menuCategoryButtons.forEach((button) => {
   });
 });
 
-const dishFilterButtons = document.querySelectorAll("[data-dish-filter]");
-const dishMenuCards = document.querySelectorAll("[data-dish-category]");
+const dishFilterNav = document.querySelector(".dish-filter-nav");
+const dishMenuData = window.senDishMenu || [];
+let dishFilterButtons = document.querySelectorAll("[data-dish-filter]");
+let dishMenuCards = document.querySelectorAll("[data-dish-category]");
 const dishBookTitle = document.querySelector("[data-dish-book-title]");
 const dishPageButtons = document.querySelectorAll("[data-dish-page]");
 const dishBookSpread = document.querySelector(".dish-book-spread");
@@ -53,7 +55,21 @@ const dishSpreadTitle = document.querySelector("[data-dish-spread-title]");
 const dishBookList = document.querySelector("[data-dish-book-list]");
 const dishBookPhotos = document.querySelector("[data-dish-book-photos]");
 const isMobileMenu = () => window.matchMedia("(max-width: 640px)").matches;
-const dishButtonList = [...dishFilterButtons];
+let dishButtonList = [];
+
+const buildDishFilterNav = () => {
+  if (!dishFilterNav || !dishMenuData.length) return;
+  dishFilterNav.replaceChildren();
+  dishMenuData.forEach((category, index) => {
+    const button = document.createElement("button");
+    button.className = index === 0 ? "active" : "";
+    button.type = "button";
+    button.dataset.dishFilter = category.id;
+    button.textContent = category.title;
+    dishFilterNav.append(button);
+  });
+  dishFilterButtons = document.querySelectorAll("[data-dish-filter]");
+};
 
 const loadDishCardImage = (card) => {
   const image = card.querySelector("img[data-src]");
@@ -63,6 +79,7 @@ const loadDishCardImage = (card) => {
 };
 
 const applyDishFilter = (filter) => {
+  if (dishMenuData.length) return;
   dishMenuCards.forEach((card) => {
     const isVisible = card.dataset.dishCategory === filter;
     if (isVisible) loadDishCardImage(card);
@@ -93,12 +110,45 @@ const organizeDishCards = () => {
 const renderDishBookSpread = (filter, title) => {
   if (!dishBookList || !dishBookPhotos || !dishSpreadTitle) return;
 
-  const cards = [...document.querySelectorAll("[data-dish-category]")]
-    .filter((card) => card.dataset.dishCategory === filter)
-    .sort((a, b) => getDishSortNumber(a) - getDishSortNumber(b));
+  const category = dishMenuData.find((item) => item.id === filter);
   dishSpreadTitle.textContent = title;
   dishBookList.replaceChildren();
   dishBookPhotos.replaceChildren();
+
+  if (category) {
+    category.items.forEach((menuItem) => {
+      const item = document.createElement("li");
+      if (!Array.isArray(menuItem)) {
+        item.className = "dish-book-subheading";
+        item.textContent = menuItem.section;
+        dishBookList.append(item);
+        return;
+      }
+      const [name, price] = menuItem;
+      const itemName = document.createElement("span");
+      const itemPrice = document.createElement("strong");
+      itemName.textContent = name;
+      itemPrice.textContent = price;
+      item.append(itemName, itemPrice);
+      dishBookList.append(item);
+    });
+
+    category.photos.slice(0, 3).forEach((photoName, index) => {
+      const figure = document.createElement("figure");
+      const photo = document.createElement("img");
+      photo.src = `assets/menu-dishes/${photoName}`;
+      photo.alt = category.title;
+      photo.loading = "lazy";
+      figure.className = index === 0 ? "featured-photo" : "";
+      figure.append(photo);
+      dishBookPhotos.append(figure);
+    });
+    return;
+  }
+
+  const cards = [...document.querySelectorAll("[data-dish-category]")]
+    .filter((card) => card.dataset.dishCategory === filter)
+    .sort((a, b) => getDishSortNumber(a) - getDishSortNumber(b));
 
   cards.forEach((card) => {
     const name = card.querySelector("h3")?.textContent.trim() || "";
@@ -145,11 +195,13 @@ const setActiveDishFilter = (filter, button, shouldAnimate = false) => {
   window.setTimeout(() => dishBookSpread.classList.remove("book-turning"), 380);
 };
 
-dishFilterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setActiveDishFilter(button.dataset.dishFilter, button, true);
+const bindDishFilterButtons = () => {
+  dishFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setActiveDishFilter(button.dataset.dishFilter, button, true);
+    });
   });
-});
+};
 
 const turnDishPage = (direction) => {
   const activeIndex = Math.max(0, dishButtonList.findIndex((item) => item.classList.contains("active")));
@@ -188,8 +240,12 @@ if (dishBookSpread) {
   });
 }
 
+buildDishFilterNav();
+dishButtonList = [...dishFilterButtons];
+if (!dishMenuData.length) dishMenuCards = document.querySelectorAll("[data-dish-category]");
+bindDishFilterButtons();
 const activeDishButton = document.querySelector("[data-dish-filter].active");
-organizeDishCards();
+if (!dishMenuData.length) organizeDishCards();
 if (activeDishButton) {
   setActiveDishFilter(activeDishButton.dataset.dishFilter, activeDishButton);
 }

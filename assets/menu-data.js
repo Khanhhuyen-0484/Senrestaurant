@@ -1,0 +1,280 @@
+window.senDishMenu = [
+  {
+    id: "khai-vi",
+    title: "Khai vị - món ăn nhẹ",
+    photos: ["starter-01-ngo-chien.jpg", "starter-04-khoai-mon-le-pho.jpg", "eel-frog-06-nem-hai-san.jpg"],
+    items: [
+      ["Ngô chiên", "30K"],
+      ["Khoai lang chiên", "30K"],
+      ["Khoai tây chiên", "30K"],
+      ["Khoai môn Lệ Phố", "30K"],
+      ["Súp gà ngô non", "15K"],
+      ["Súp cua", "20K"],
+      ["Súp nấm hải sản", "25K"],
+      ["Nem hải sản", "10K/cái"],
+      ["Chả cua bể", "30K/cái"]
+    ]
+  },
+  {
+    id: "goi-nom-salad",
+    title: "Gỏi - nộm - salad",
+    photos: ["starter-08-nom-sua-xoai-xanh.jpg", "starter-09-nom-hoa-chuoi-hai-san.jpg", "starter-10-nom-rau-ma-tom-tuoi.jpg"],
+    items: [
+      ["Salad rau củ quả", "60K"],
+      ["Nộm rau má lạc", "40K"],
+      ["Nộm chân gà sả tắc", "70K"],
+      ["Nộm sứa xoài xanh", "80K"],
+      ["Nộm hoa chuối hải sản", "90K"],
+      ["Nộm hoa chuối tai heo", "90K"],
+      ["Nộm hoa chuối bắp bò", "90K"],
+      ["Nộm rau má tôm/bắp bò", "90K"],
+      ["Salad lườn ngỗng hun khói", "120K"],
+      ["Nộm gà xé phay", "120K"],
+      ["Gỏi tai xoài", "120K"],
+      { section: "Gỏi cá - đặt trước" },
+      ["Gỏi cá mai", "300K"],
+      ["Gỏi cá dưa", "300K"],
+      ["Gỏi cá đuối", "300K"],
+      ["Gỏi cá nhệch", "350K"]
+    ]
+  },
+  {
+    id: "tom-muc",
+    title: "Tôm - mực",
+    photos: ["squid-shrimp-07-tom-hap-bia.jpg", "squid-shrimp-08-tom-nuong.jpg", "squid-shrimp-01-muc-ong-hap.jpg"],
+    items: [
+      { section: "Món tôm" },
+      ["Tôm chiên tổ yến", "140K"],
+      ["Tôm hấp bia sả", "140K"],
+      ["Tôm chiên xù", "140K"],
+      ["Tôm nướng", "140K"],
+      ["Tôm rang muối", "140K"],
+      ["Tôm chiên phô mai", "140K"],
+      ["Tôm sông chiên giòn cuốn cải", "120K"],
+      { section: "Tôm càng xanh - tính theo kg" },
+      ["Tôm càng xanh hấp", "Tính kg"],
+      ["Tôm càng xanh nướng mọi", "Tính kg"],
+      ["Tôm càng xanh nướng phô mai", "Tính kg"],
+      { section: "Tôm hùm - thời giá/kg" },
+      ["Tôm hùm hấp", "Thời giá"],
+      ["Tôm hùm rang muối", "Thời giá"],
+      ["Tôm hùm nướng phô mai", "Thời giá"],
+      { section: "Món mực" },
+      ["Mực ống hấp", "160K"],
+      ["Mực chiên bơ", "160K"],
+      ["Mực chiên xù", "160K"],
+      ["Mực trứng hấp", "160K"],
+      ["Mực trứng chiên lá lốt", "160K"],
+      ["Mực nấu lá chua", "160K"],
+      ["Chả mực sốt me", "160K"]
+    ]
+  },
+  {
+    id: "cua-ghe-hau-oc",
+    title: "Cua - ghẹ - hàu - ốc",
+    photos: ["seafood-05-cua-bien.jpg", "seafood-01-hau-nuong-mo-hanh.jpg", "seafood-07-oc-nhoi-om-me.jpg"],
+    items: [
+      { section: "Cua, ghẹ - thời giá/kg" },
+      ["Hấp sả", "Thời giá"],
+      ["Rang muối", "Thời giá"],
+      ["Sốt me", "Thời giá"],
+      { section: "Hàu" },
+      ["Hàu nướng mỡ hành", "10K/con"],
+      ["Hàu gỏi mù tạt", "12K/con"],
+      ["Hàu nướng phô mai", "15K/con"],
+      { section: "Sò, ốc" },
+      ["Ốc hương hấp sả", "Tính kg"],
+      ["Ốc hương nướng mọi", "Tính kg"],
+      ["Ốc hương sốt bơ cay", "Tính kg"],
+      ["Ốc hương sốt me Thái", "Tính kg"],
+      ["Ốc nhồi hấp mẻ", "140K"],
+      ["Ốc nhồi hấp sả", "140K"],
+      ["Ốc nhồi om chuối đậu", "140K"]
+    ]
+  },
+  {
+    id: "ca-cac-loai",
+    title: "Cá các loại",
+    photos: ["fish-04-ca-song-hap-xi-dau-goi.jpg", "fish-09-lau-ca-tam.jpg", "fish-08-ca-qua-nuong-giay-bac.jpg"],
+    items: [
+      { section: "Cá mú - tính theo kg" },
+      ["Cá mú hấp xì dầu", "Tính kg"],
+      ["Gỏi cá mú", "Tính kg"],
+      { section: "Cá trình" },
+      ["Cá trình om chuối đậu", "150K"],
+      ["Cá trình nướng riềng mẻ", "150K"],
+      { section: "Cá tầm - cá trắm giòn - cá lăng" },
+      ["Rang muối", "150K"],
+      ["Cá trắm giòn xào cần", "150K"],
+      ["Cá trắm giòn xào dưa", "150K"],
+      ["Nướng riềng mẻ", "150K-300K"],
+      ["Om chuối đậu", "150K-500K"],
+      ["Om măng cay", "150K-500K"],
+      { section: "Cá chép - cá quả" },
+      ["Cá chép hấp dưa", "180K"],
+      ["Cá quả hấp dưa", "180K"],
+      ["Cá quả nướng giấy bạc", "180K"]
+    ]
+  },
+  {
+    id: "ga-chim",
+    title: "Gà - chim",
+    photos: ["meat-05-ga-rang-muoi.jpg", "meat-03-ga-nuong.jpg", "meat-04-ga-quay-gion-bi.jpg"],
+    items: [
+      ["Gà rang muối", "140K"],
+      ["Gà chiên mắm", "140K"],
+      ["Gà xào nấm", "160K"],
+      ["Gà nấu mẻ", "180K"],
+      ["Gà luộc/hấp", "180K"],
+      ["Gà nướng", "180K"],
+      ["Gà quay giòn bì", "180K"],
+      ["Gà nấu nấm", "180K"],
+      ["Gà hầm ngải cứu nấm tươi", "180K"],
+      ["Gà bó xôi", "180K"],
+      ["Chim sẻ chiên cay thơm", "120K"]
+    ]
+  },
+  {
+    id: "trau-bo-be",
+    title: "Trâu - bò - bê",
+    photos: ["meat-06-bo-xao-dua-can-rau-muong.jpg", "meat-08-trau-nhung-me.jpg", "fish-01-be-tai-chanh.jpg"],
+    items: [
+      { section: "Trâu - bò" },
+      ["Xào rau cần", "120K"],
+      ["Xào dưa", "120K"],
+      ["Cuốn cải", "140K"],
+      ["Xào măng trúc", "140K"],
+      ["Sốt tiêu đen", "150K"],
+      ["Bò lúc lắc", "150K"],
+      ["Bắp hoa hấp", "150K"],
+      ["Bắp hoa nấu mẻ", "150K"],
+      ["Thịt/bắp nhúng mẻ", "200K-400K"],
+      { section: "Món bê" },
+      ["Bê xào lăn", "140K"],
+      ["Bê tái chanh", "140K"],
+      ["Bê hấp tía tô", "140K"],
+      ["Bê sữa chao móc mật", "160K"],
+      ["Bê sữa nướng tảng", "160K"]
+    ]
+  },
+  {
+    id: "de",
+    title: "Món dê",
+    photos: ["meat-09-de-tai-chanh.jpg", "meat-10-de-ap-chao.jpg", "meat-09-de-tai-chanh.jpg"],
+    items: [
+      ["Tiết canh dê", "30K/bát"],
+      ["Dê tái chanh", "180K"],
+      ["Dê xào lăn", "180K"],
+      ["Dê hấp tía tô", "180K"],
+      ["Dê nướng giấy bạc", "180K"],
+      ["Dê nhúng mẻ", "200K-600K"]
+    ]
+  },
+  {
+    id: "dac-san-dong-que",
+    title: "Đặc sản đồng quê - món nhậu",
+    photos: ["drinking-05-hen-xuc-banh-a.jpg", "eel-frog-05-ech-rang-muoi.jpg", "seafood-03-baba.jpg"],
+    items: [
+      { section: "Lòng - món nhậu" },
+      ["Hến xúc bánh đa", "60K"],
+      ["Lòng lợn xào dưa", "90K"],
+      ["Chân gà chiên mắm", "90K"],
+      ["Trạch chiên lá lốt", "90K"],
+      ["Tù và ếch xào dưa", "120K"],
+      ["Chân giò chiên mắm", "120K"],
+      ["Dế chiên cay thơm", "150K"],
+      ["Trường lòng nấu mẻ", "200K"],
+      ["Trường lợn hấp", "200K"],
+      { section: "Lươn - ếch" },
+      ["Ếch om chuối đậu", "120K"],
+      ["Ếch om cà", "120K"],
+      ["Ếch rang muối", "120K"],
+      ["Ếch xào măng cay", "120K"],
+      ["Ếch xào sả ớt", "120K"],
+      ["Lươn om chuối đậu", "150K"],
+      ["Lươn xào sả ớt", "150K"],
+      ["Lươn xào măng cay", "150K"],
+      { section: "Ba ba - đặt trước/kg" },
+      ["Ba ba om chuối đậu", "Đặt trước"],
+      ["Ba ba rang muối", "Đặt trước"],
+      ["Ba ba nướng", "Đặt trước"],
+      ["Ba ba rượu vang", "Đặt trước"],
+      { section: "Dọn - dúi - cầy, đặt trước/kg" },
+      ["Hấp", "Đặt trước"],
+      ["Giả cầy", "Đặt trước"]
+    ]
+  },
+  {
+    id: "man-an-com",
+    title: "Món mặn ăn cơm",
+    photos: ["meat-05-ga-rang-muoi.jpg", "vegetable-05-canh-cua-ong.jpg", "drinking-06-tep-chien-gion-cuon-cai.jpg"],
+    items: [
+      ["Trứng rán", "30K"],
+      ["Đậu phụ sốt cà chua", "40K"],
+      ["Thịt rang cháy cạnh", "60K"],
+      ["Thịt luộc", "80K"],
+      ["Thịt quay", "80K"],
+      ["Sườn chua ngọt", "90K"],
+      ["Cá bống kho tiêu", "90K"],
+      ["Thịt rang tôm sông", "120K"],
+      ["Gà rang lá chanh", "120K"]
+    ]
+  },
+  {
+    id: "rau-canh",
+    title: "Rau - canh",
+    photos: ["vegetable-01-rau-muong-xao-toi.jpg", "vegetable-05-canh-cua-ong.jpg", "vegetable-07-canh-chua-hai-san.jpg"],
+    items: [
+      { section: "Rau theo mùa" },
+      ["Rau muống xào tỏi", "20K"],
+      ["Rau cần xào tỏi", "20K"],
+      ["Rau lang xào tỏi", "20K"],
+      ["Rau cải xào tỏi", "20K"],
+      ["Rau bí xào", "20K"],
+      { section: "Món canh" },
+      ["Canh cua đồng", "30K"],
+      ["Canh ngao", "30K"],
+      ["Canh chua hải sản", "60K"],
+      ["Canh cá chua", "80K-150K"]
+    ]
+  },
+  {
+    id: "com-my-mien-xoi",
+    title: "Cơm - mỳ - miến - xôi",
+    photos: ["hotpot-08-com-rang-dua-bo.jpg", "eel-frog-09-mien-xao-hai-san.jpg", "hotpot-09-xoi-chien.jpg"],
+    items: [
+      { section: "Cơm" },
+      ["Cơm rang dưa bò", "45K"],
+      ["Cơm rang hải sản", "45K"],
+      { section: "Mỳ - miến" },
+      ["Mỳ xào bò", "60K"],
+      ["Mỳ xào hải sản", "60K"],
+      ["Miến xào thập cẩm", "90K"],
+      ["Miến xào hải sản", "120K"],
+      { section: "Xôi" },
+      ["Xôi sen dừa", "40K"],
+      ["Xôi ruốc", "40K"],
+      ["Xôi gấc", "40K"],
+      ["Xôi chim chiên", "70K"],
+      ["Xôi chim trộn", "70K"]
+    ]
+  },
+  {
+    id: "lau-set-nhom",
+    title: "Lẩu - set nhóm",
+    photos: ["hotpot-03-lau-ech-mang-cay.jpg", "hotpot-01-lau-thap-cam.jpg", "hotpot-02-lau-hai-san.jpg"],
+    items: [
+      ["Lẩu ếch măng cay", "300K"],
+      ["Lẩu gà ta", "400K"],
+      ["Lẩu thập cẩm", "500K"],
+      ["Lẩu hải sản", "500K"],
+      ["Lẩu riêu cua bắp bò", "500K"],
+      ["Lẩu thập cẩm Tứ Xuyên", "600K"],
+      ["Lẩu Trường Thọ", "600K"],
+      { section: "Lẩu cá các loại" },
+      ["Lẩu cá trình", "Tính kg"],
+      ["Lẩu cá tầm", "Tính kg"],
+      ["Lẩu cá lăng", "Tính kg"]
+    ]
+  }
+];

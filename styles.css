@@ -1185,6 +1185,20 @@ section {
   white-space: normal;
 }
 
+.dish-book-list-page .dish-book-subheading {
+  display: block;
+  min-height: auto;
+  margin-top: 12px;
+  padding: 9px 0 5px;
+  color: var(--gold);
+  border-bottom: 0;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .dish-book-photo-page figure {
   position: relative;
   min-height: 0;
